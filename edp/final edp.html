@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebration Planner</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            margin: 0;
+            padding: 0;
+            background-color: #ffe5e5;
+            color: #4b3621;
+        }
+        header {
+            background-color: #f8b195;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+        .container {
+            padding: 20px;
+        }
+        .button {
+            background-color: #d4af37;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .button:hover {
+            background-color: #c5a32d;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .hidden {
+            display: none;
+        }
+        footer {
+            background-color: #4b3621;
+            color: #ffe5e5;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Celebration Planner</h1>
+        <p class="quote">"Turning moments into memories with a touch of elegance."</p>
+    </header>
+
+    <div class="container">
+        <!-- Login Section -->
+        <div class="section" id="login-section">
+            <h2>Login</h2>
+            <form>
+                <label for="login-email">Email:</label><br>
+                <input type="email" id="login-email" required><br><br>
+                <label for="login-password">Password:</label><br>
+                <input type="password" id="login-password" required><br><br>
+                <button class="button">Login</button>
+            </form>
+        </div>
+
+        <!-- Sign Up Section -->
+        <div class="section" id="signup-section">
+            <h2>Sign Up</h2>
+            <form>
+                <label for="signup-email">Email:</label><br>
+                <input type="email" id="signup-email" required><br><br>
+                <label for="signup-password">Password:</label><br>
+                <input type="password" id="signup-password" required><br><br>
+                <button class="button">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Options Section -->
+        <div class="section">
+            <h2>Our Services</h2>
+            <button class="button" onclick="showBirthdayParty()">Birthday Party Decorations</button>
+            <button class="button" onclick="showWeddingDecoration()">Wedding Decorations</button>
+        </div>
+
+        <!-- Birthday Party Section -->
+        <div class="section hidden" id="birthday-party">
+            <h2>Birthday Party Decorations</h2>
+            <img src="https://via.placeholder.com/600x300.png?text=Birthday+Party" alt="Birthday Party">
+            <p>Explore our vibrant, customizable birthday party themes for kids and adults!</p>
+            <button class="button" onclick="orderNow()">Order Now</button>
+        </div>
+
+        <!-- Wedding Decoration Section -->
+        <div class="section hidden" id="wedding-decoration">
+            <h2>Wedding Flower Decorations</h2>
+            <img src="https://via.placeholder.com/600x300.png?text=Wedding+Decoration" alt="Wedding">
+            <p>Elegant flower arrangements tailored to your dream wedding.</p>
+            <button class="button" onclick="orderNow()">Order Now</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact us: <strong>+123-456-7890</strong> | <strong>info@celebrationplanner.com</strong></p>
+    </footer>
+
+    <script>
+        function showBirthdayParty() {
+            document.getElementById('birthday-party').classList.remove('hidden');
+            document.getElementById('wedding-decoration').classList.add('hidden');
+        }
+
+        function showWeddingDecoration() {
+            document.getElementById('wedding-decoration').classList.remove('hidden');
+            document.getElementById('birthday-party').classList.add('hidden');
+        }
+
+        function orderNow() {
+            alert("Thank you for your interest! We'll contact you shortly.");
+        }
+    </script>
+</body>
+</html>
